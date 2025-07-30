@@ -75,5 +75,34 @@ class Program
         {
             Console.WriteLine("Invalid input. Please enter a number between 0 and 100.");
         }
+
+    }
+
+    // Task 2: Ticket Price Calculator [cite: 5]
+    static void RunTicketPriceCalculator()
+    {
+        Console.WriteLine("\n--- Ticket Price Calculator ---");
+        Console.Write("Please enter your age: ");
+
+        if (int.TryParse(Console.ReadLine(), out int age) && age > 0)
+        {
+            int price;
+            // Discount for senior (age 65+) or child (age 12 and below) [cite: 12]
+            if (age >= 65 || age <= 12)
+            {
+                price = 7; // Discounted price is GHC7 [cite: 12]
+            }
+            else
+            {
+                price = 10; // Standard price is GHC10 [cite: 12]
+            }
+            Console.WriteLine($"Your ticket price is: GHC{price}"); // [cite: 14]
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid age.");
+        }
     }
 }
+
+
